@@ -4,7 +4,7 @@
 if ! command -v pnpm &> /dev/null
 then
     echo "pnpm could not be found, installing..."
-    curl -fsSL https://get.pnpm.io/install.sh | sh -
+    curl -fsSL https://get.pnpm.io/install.sh | sudo bash -
     source ~/.bashrc
 fi
 
