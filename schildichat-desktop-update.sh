@@ -1,15 +1,7 @@
 #!/bin/bash
 
-# 检查是否已经安装了 pnpm
-if ! command -v pnpm &> /dev/null
-then
-    echo "pnpm could not be found, installing..."
-    curl -fsSL https://get.pnpm.io/install.sh | sudo bash -
-    source ~/.bashrc
-fi
-
 # 检查是否已经安装了 jq
-if ! command -v pnpm &> /dev/null
+if ! command -v jq &> /dev/null
 then
     echo "jq could not be found, installing..."
     sudo apt-get update && sudo apt-get install jq -y
@@ -19,14 +11,14 @@ fi
 if ! command -v ipfs-car &> /dev/null
 then
     echo "ipfs-car could not be found, installing..."
-    pnpm i ipfs-car -g
+    npm i ipfs-car -g
 fi
 
 # 检查是否已经安装了 carbites-cli
 if ! command -v carbites-cli &> /dev/null
 then
     echo "carbites-cli could not be found, installing..."
-    pnpm i carbites-cli -g
+    npm i carbites-cli -g
 fi
 
 # 设置环境变量
