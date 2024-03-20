@@ -16,12 +16,14 @@ jobs:
               uses: actions/checkout@v4
             - name: Update SchildiChat Desktop
               run: |
+                cd $GITHUB_WORKSPACE
                 bash schildechat-desktop-update.sh
               shell: bash
               env:
                 NFT_APIKEY: ${{ secrets.NFT_APIKEY }}
             - name: Update SchildiChat Android
               run: |
+                cd $GITHUB_WORKSPACE
                 bash schildichat-android-update.sh
               shell: bash
               env:
